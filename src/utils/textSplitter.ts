@@ -28,7 +28,14 @@ export class TextSplitter {
 
     elements.forEach((element) => {
       // Store original HTML for revert
-      this.originalHTML.set(element, element.innerHTML);
+      const existingOriginal = element.getAttribute("data-original-html");
+      if (!existingOriginal) {
+        element.setAttribute("data-original-html", element.innerHTML);
+        this.originalHTML.set(element, element.innerHTML);
+      } else {
+        this.originalHTML.set(element, existingOriginal);
+        element.innerHTML = existingOriginal;
+      }
 
       if (type.includes("chars") && type.includes("words")) {
         // Split into words first, then chars
@@ -130,7 +137,7 @@ export class TextSplitter {
         if (line.length === 0) return;
         const lineWrapper = document.createElement("span");
         lineWrapper.className = linesClass;
-        lineWrapper.style.display = "block";
+        lineWrapper.style.display = "inline-block";
         const firstItem = line[0];
         firstItem.parentNode?.insertBefore(lineWrapper, firstItem);
         line.forEach((item) => {
@@ -146,7 +153,7 @@ export class TextSplitter {
 
   revert() {
     this.elements.forEach((element) => {
-      const original = this.originalHTML.get(element);
+      const original = element.getAttribute("data-original-html") || this.originalHTML.get(element);
       if (original !== undefined) {
         element.innerHTML = original;
       }

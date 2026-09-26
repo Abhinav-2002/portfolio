@@ -25,20 +25,21 @@
 }
 
 .about-me p {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 26px;
-  letter-spacing: 0.5px;
-  word-spacing: 2px;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  word-spacing: 1px;
 }
 
 .about-me .split-word {
   display: inline-block;
-  margin-right: 0.3em;
+  margin-right: 0.28em;
+  white-space: normal;
 }
 
 .about-me .split-line {
-  display: block;
+  display: inline;
 }
 
 @media only screen and (min-width: 600px) {
@@ -46,30 +47,31 @@
     justify-content: center;
   }
   .about-me {
-    width: 500px;
+    width: 650px;
+    max-width: 92%;
+  }
+  .about-me h3 {
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+  .about-me p {
+    font-size: 22px;
+    line-height: 1.55;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .about-me {
+    width: 700px;
+    max-width: 90%;
+    transform: translateY(0%);
   }
   .about-me h3 {
     font-size: 22px;
     letter-spacing: 6px;
   }
   .about-me p {
-    font-size: 28px;
-    line-height: 32px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .about-me {
-    width: 500px;
-    max-width: calc(100% - 70px);
-    transform: translateY(0%);
-  }
-  .about-me h3 {
-    font-size: 25px;
-    letter-spacing: 7px;
-  }
-  .about-me p {
-    font-size: 33px;
-    line-height: 36px;
+    font-size: 24px;
+    line-height: 1.55;
   }
   .about-section {
     opacity: 1;
@@ -86,16 +88,17 @@
   }
   .about-me {
     padding: 0px;
-    width: 50%;
+    width: 52%;
+    max-width: 800px;
   }
   .about-me p {
-    font-size: 1.9vw;
-    line-height: 2.3vw;
+    font-size: 1.65vw;
+    line-height: 2.25vw;
   }
 }
 @media only screen and (min-width: 1950px) {
   .about-me p {
-    font-size: 2.5rem;
-    line-height: 2.7rem;
+    font-size: 2.1rem;
+    line-height: 2.6rem;
   }
 }

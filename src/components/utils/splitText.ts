@@ -26,8 +26,7 @@ export default function setSplitText() {
     }
 
     para.split = new TextSplitter(para, {
-      type: "lines,words",
-      linesClass: "split-line",
+      type: "words",
     });
 
     para.anim = gsap.fromTo(

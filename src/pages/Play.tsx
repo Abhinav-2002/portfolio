@@ -447,7 +447,7 @@ const Play = () => {
           <div className="player-bar opponent-bar">
             <div className="player-info">
               <div className="player-avatar">
-                <img src="/images/mypic.jpeg" alt="Abhinav Tomar" loading="lazy" decoding="async" />
+                <img src="/images/abhinav_avatar.png" alt="Abhinav Tomar" loading="lazy" decoding="async" />
               </div>
               <div className="player-details">
                 <span className="player-name">Abhinav Tomar</span>
