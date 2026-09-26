@@ -29,9 +29,26 @@ const MyWorks = () => {
                 <p className="myworks-card-category">{project.category}</p>
                 <p className="myworks-card-description">{project.description}</p>
                 <p className="myworks-card-tech">{project.technologies}</p>
+                {!project.link && (
+                  <div className="myworks-proprietary-badge">
+                    🔒 Enterprise Internal Tool (TCS) • Proprietary Code
+                  </div>
+                )}
               </div>
             </>
           );
+
+          if (!project.link) {
+            return (
+              <div
+                className="myworks-card"
+                key={project.id}
+                data-cursor="disable"
+              >
+                {cardContent}
+              </div>
+            );
+          }
 
           if (isInternalLink) {
             return (
@@ -51,9 +68,9 @@ const MyWorks = () => {
               className="myworks-card"
               key={project.id}
               data-cursor="disable"
-              href={project.link || undefined}
-              target={project.link ? "_blank" : undefined}
-              rel={project.link ? "noopener noreferrer" : undefined}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {cardContent}
             </a>

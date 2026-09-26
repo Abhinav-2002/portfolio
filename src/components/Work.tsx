@@ -78,6 +78,11 @@ const Work = () => {
                 </div>
                 <h4>Tools and features</h4>
                 <p>{project.technologies}</p>
+                {!project.link && (
+                  <p className="work-proprietary-note">
+                    🔒 Built at TCS (Enterprise Internal Tool • Proprietary Code)
+                  </p>
+                )}
               </div>
               <WorkImage image={project.image} alt={project.title} link={project.link} />
             </div>

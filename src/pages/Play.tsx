@@ -56,16 +56,16 @@ Career Experience:
 - Independent Mobile Developer: Shipped AHabit to Google Play Store (1k+ downloads) with home screen widgets and offline-first Hive storage.
 
 Key Projects:
+- Custom CSV & Excel MCP Server: High-performance Model Context Protocol (MCP) server engineered at TCS for enterprise automation. It allows AI agents to inspect, filter, query, transform, and analyze enterprise spreadsheets via standard MCP protocols. Note: As an enterprise internal tool built at TCS, its source code is proprietary and not hosted on a public GitHub repo.
 - CRAMIX: Full-stack live collaborative teaching platform serving 300+ college students. Features WebSocket real-time chatrooms, Zoom SDK live video sessions, JWT role-based access control, and responsive React.js UI deployed on Vercel.
-- AHabit: Cross-platform habit tracker on Google Play Store (1k+ downloads). Features Android home screen widgets, daily streak tracking, smart notifications, and sub-100ms sync.
-- Enterprise GenAI Agent Pipeline: Multi-step agentic pipelines orchestrating tool execution and RAG document retrieval with Azure OpenAI, LangGraph, and Streamlit.
-- MERN Industrial Portal: Role-based dashboards and state management built with React, Node.js, Express, and MongoDB.
+- AHabit: Cross-platform habit tracker on Google Play Store (1,000+ active downloads). Features Android home screen widgets, daily streak tracking, smart notifications, and sub-100ms sync.
+- AI Persona & Chess Playground: Interactive AI game and persona system running on Google Gemini.
 
 Contact and links:
 - Email: abhinavthakur808@gmail.com
 - Phone: +91 8126882790
-- GitHub: https://github.com/abhinavthakur808
-- LinkedIn: https://www.linkedin.com/in/abhinavthakur808
+- GitHub: https://github.com/Abhinav-2002
+- LinkedIn: https://www.linkedin.com/in/abhinav-tomar-87339b28a/
 
 Conversation rules:
 1. Answer directly, naturally, and concisely; expand with technical depth when asked.
@@ -232,55 +232,125 @@ const Play = () => {
     setBoardFlipped(!boardFlipped);
   };
 
+  const GEMINI_API_KEY = (import.meta.env.VITE_GEMINI_API_KEY as string) || "";
+
+  const getOnDevicePersonaResponse = (query: string): string => {
+    const q = query.toLowerCase().trim();
+
+    if (q.includes("mcp") || q.includes("csv") || q.includes("excel")) {
+      return "At TCS, I designed and implemented a custom Model Context Protocol (MCP) server for CSV and Excel files. As an enterprise internal tool built for TCS client workflows, it allows autonomous AI agents (using LangGraph, LangChain, and Cursor) to inspect schemas, execute parameterized queries, filter rows, and extract verified tabular insights without hallucinations. Because it was developed as an enterprise tool at TCS, its codebase is proprietary and not hosted on a public GitHub repo.";
+    }
+
+    if (q.includes("ahabit") || q.includes("habit") || q.includes("play store") || q.includes("tracker")) {
+      return "I built and published AHabit to the Google Play Store (1,000+ active downloads)! It's a cross-platform Flutter app with native Android home screen widgets written in Kotlin, sub-100ms sync via SharedPreferences, smart reminders, and an offline-first architecture using Hive.";
+    }
+
+    if (q.includes("cramix") || q.includes("teaching") || q.includes("zoom")) {
+      return "CRAMIX is a full-stack live collaborative teaching platform serving 300+ students. I engineered real-time chatrooms with WebSockets, live video sessions with Zoom SDK, JWT role-based access control, and a responsive React frontend deployed on Vercel.";
+    }
+
+    if (q.includes("experience") || q.includes("tcs") || q.includes("work") || q.includes("job") || q.includes("role") || q.includes("years") || q.includes("year")) {
+      return "I have 1+ year of engineering experience currently focused on AI Agentic Roles as an AI Rapid Build Engineer at Tata Consultancy Services (TCS). My day-to-day involves designing multi-step agentic pipelines with LangGraph & LangChain, integrating Azure OpenAI into enterprise systems, and building custom MCP servers. Previously, I worked as a Full Stack Developer Intern at Ethnus.";
+    }
+
+    if (q.includes("agent") || q.includes("agentic") || q.includes("langgraph") || q.includes("langchain")) {
+      return "I'm heavily focused on AI Agentic architectures! At TCS, I build autonomous multi-step reasoning loops using LangGraph and LangChain, integrating tools via MCP (Model Context Protocol), semantic retrieval with RAG, and Azure OpenAI LLMs to automate complex enterprise decisions.";
+    }
+
+    if (q.includes("skills") || q.includes("tech stack") || q.includes("technologies") || q.includes("tools")) {
+      return "My core tech stack covers: \n• AI & Agents: LangChain, LangGraph, Azure OpenAI, OpenAI API, Custom MCP Servers, RAG, Streamlit\n• Languages: Python, JavaScript (ES6+), TypeScript, C++, Java, Kotlin, Dart\n• Full-Stack & Mobile: React.js, Node.js, Express, MongoDB, Flutter, Hive DB, WebSocket, REST APIs\n• CS Fundamentals: 200+ solved DSA problems, DBMS, OOP, System Architecture.";
+    }
+
+    if (q.includes("education") || q.includes("college") || q.includes("vit") || q.includes("degree") || q.includes("gmat")) {
+      return "I graduated with a B.Tech in Computer Science & Engineering from Vellore Institute of Technology (VIT, Vellore) with an 8.18 CGPA. I also achieved a 695 / 800 on the GMAT (≈ 98th Percentile Globally), reflecting strong quantitative and analytical problem-solving skills!";
+    }
+
+    if (q.includes("contact") || q.includes("email") || q.includes("hire") || q.includes("phone") || q.includes("reach") || q.includes("linkedin") || q.includes("github")) {
+      return "I'd love to connect! You can reach me via email at abhinavthakur808@gmail.com, phone at +91 8126882790, LinkedIn (https://www.linkedin.com/in/abhinav-tomar-87339b28a/), or explore my code on GitHub (https://github.com/Abhinav-2002).";
+    }
+
+    if (q.includes("chess") || q.includes("elo") || q.includes("game")) {
+      return "Chess is one of my favorite strategy games! This engine on the board is rated 3640 ELO and calculates deep tactical lines with bitboards and alpha-beta pruning. Make a move on the board to test your strategy!";
+    }
+
+    if (q.includes("hi") || q.includes("hello") || q.includes("hey") || q.includes("who are you")) {
+      return "Hey! I'm Abhinav Tomar 👋 AI Rapid Build Engineer at TCS specializing in AI Agentic systems, multi-step LLM pipelines, and full-stack development. Feel free to ask me anything about my work, projects, or background!";
+    }
+
+    return "Thanks for asking! As an AI Rapid Build Engineer at TCS with 1+ year of experience, I focus on building production-ready AI Agentic workflows (LangGraph, Azure OpenAI, custom MCP servers) and full-stack applications like AHabit and CRAMIX. Feel free to ask about any specific project or my tech stack!";
+  };
+
   const sendMessage = async () => {
     if (!chatInput.trim()) return;
 
-    const userMessage: ChatMessage = { role: 'user', content: chatInput };
+    const currentText = chatInput;
+    const userMessage: ChatMessage = { role: 'user', content: currentText };
     setChatMessages(prev => [...prev, userMessage]);
     setChatInput('');
     setIsTyping(true);
 
-    try {
-      const messages = [
-        { role: 'system', content: SYSTEM_PROMPT },
-        ...chatMessages.filter(m => m.role !== 'system').map(m => ({
-          role: m.role,
-          content: m.content
-        })),
-        { role: 'user', content: chatInput }
-      ];
+    let answer = "";
 
-      const response = await fetch('/api/chat', {
+    // 1. Try Google Gemini API with provided key
+    try {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          messages: messages,
+          contents: [
+            {
+              role: 'user',
+              parts: [{ text: `${SYSTEM_PROMPT}\n\nUser Question: ${currentText}` }]
+            }
+          ]
         }),
       });
 
-      const data = await response.json();
-
-      if (data.choices && data.choices[0]?.message?.content) {
-        const assistantMessage: ChatMessage = {
-          role: 'assistant',
-          content: data.choices[0].message.content
-        };
-        setChatMessages(prev => [...prev, assistantMessage]);
-      } else {
-        throw new Error('Invalid response');
+      if (response.ok) {
+        const data = await response.json();
+        const geminiText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (geminiText) {
+          answer = geminiText;
+        }
       }
-    } catch (error) {
-      console.error('Chat error:', error);
-      const errorMessage: ChatMessage = {
-        role: 'assistant',
-        content: 'Sorry, having some connection issues. Try again? 😅'
-      };
-      setChatMessages(prev => [...prev, errorMessage]);
-    } finally {
-      setIsTyping(false);
+    } catch (e) {
+      console.warn("Direct Gemini call bypassed, falling back:", e);
     }
+
+    // 2. If Gemini didn't respond, try /api/chat serverless route
+    if (!answer) {
+      try {
+        const response = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            messages: [
+              { role: 'system', content: SYSTEM_PROMPT },
+              ...chatMessages.filter(m => m.role !== 'system').map(m => ({ role: m.role, content: m.content })),
+              { role: 'user', content: currentText }
+            ],
+          }),
+        });
+        if (response.ok) {
+          const data = await response.json();
+          if (data?.choices?.[0]?.message?.content) {
+            answer = data.choices[0].message.content;
+          }
+        }
+      } catch (e) {
+        console.warn("API route bypassed:", e);
+      }
+    }
+
+    // 3. Guaranteed instant intelligent on-device persona engine
+    if (!answer) {
+      answer = getOnDevicePersonaResponse(currentText);
+    }
+
+    setChatMessages(prev => [...prev, { role: 'assistant', content: answer }]);
+    setIsTyping(false);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {

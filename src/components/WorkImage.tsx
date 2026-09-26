@@ -65,6 +65,7 @@ const WorkImage = (props: Props) => {
           onMouseLeave={() => setIsVideo(false)}
           data-cursor={"disable"}
         >
+          <div className="work-internal-badge">Enterprise Tool (TCS) • Proprietary</div>
           <img src={props.image} alt={props.alt} loading="lazy" decoding="async" />
           {isVideo && <video src={video} autoPlay muted playsInline loop></video>}
         </div>
