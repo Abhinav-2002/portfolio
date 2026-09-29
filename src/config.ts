@@ -14,7 +14,7 @@ export const config = {
     },
     about: {
         title: "About Me",
-        description: "Computer Science graduate from Vellore Institute of Technology (VIT, 8.18 CGPA) with 1+ year of experience, currently focused on AI Agentic Roles as an AI Rapid Build Engineer at Tata Consultancy Services (TCS). I specialize in designing autonomous agentic pipelines with LangGraph & LangChain, building custom Model Context Protocol (MCP) servers for enterprise tabular data (CSV/Excel), and integrating Azure OpenAI capabilities into mission-critical workflows. In addition to GenAI, I have shipped cross-platform apps including AHabit (published on Google Play Store with 1,000+ users), full-stack web platforms, and offline-first PWAs. With strong Data Structures & Algorithms foundations (200+ solved problems) and a 98th percentile GMAT analytical score (695/800), I transform complex problem domains into production-grade autonomous software."
+        description: "Computer Science graduate from Vellore Institute of Technology (VIT, 8.18 CGPA) with 1+ year of experience, currently focused on AI Agentic Roles as an AI Rapid Build Engineer at Tata Consultancy Services (TCS). I specialize in designing autonomous agentic pipelines with LangGraph & LangChain, building custom Model Context Protocol (MCP) servers for enterprise tabular data (CSV/Excel), and integrating Azure OpenAI capabilities into mission-critical workflows. In addition to enterprise AI, I founded and shipped RoleFit AI (live precision resume matching SaaS), AHabit (published on Google Play Store with 1,000+ downloads), and CRAMIX live teaching platform (300+ students). With strong Data Structures & Algorithms foundations (200+ solved problems) and a 98th percentile GMAT analytical score (695/800), I transform complex problem domains into production-grade autonomous software."
     },
     experiences: [
         {
@@ -89,6 +89,15 @@ export const config = {
     projects: [
         {
             id: 1,
+            title: "RoleFit AI – Precision Resume & ATS Matcher",
+            category: "Live AI SaaS • LLM Pipeline • ATS Engine",
+            technologies: "Next.js, React, Node.js, LLM APIs, Web Scraping, PDF Engine, Vercel",
+            image: "/images/rolefit_ai.png",
+            description: "Launched production AI SaaS that automates the job application workflow. Features master PDF resume parsing, instant job requirement scraping from LinkedIn, Greenhouse, Ashby & Lever, fit radar gap scoring, and 1-click tailored ATS resume generation.",
+            link: "https://saas-psi-flax.vercel.app/"
+        },
+        {
+            id: 2,
             title: "Custom CSV & Excel MCP Server",
             category: "Enterprise AI • Built at TCS (Proprietary / Internal)",
             technologies: "Model Context Protocol (MCP), Python, Pandas, Azure OpenAI, LangGraph",
@@ -97,7 +106,7 @@ export const config = {
             link: ""
         },
         {
-            id: 2,
+            id: 3,
             title: "AHabit – Smart Habit Tracker",
             category: "Mobile App • Play Store (1k+ DL)",
             technologies: "Flutter, Dart, Kotlin, Hive DB, Home Widgets, Local Notifications",
@@ -106,7 +115,7 @@ export const config = {
             link: "https://play.google.com/store/apps/details?id=com.ahabit.tracker"
         },
         {
-            id: 3,
+            id: 4,
             title: "CRAMIX",
             category: "Full-Stack Web & Real-Time Platform",
             technologies: "React.js, Node.js, MongoDB, WebSocket, Zoom SDK, JWT, Vercel",
@@ -115,7 +124,7 @@ export const config = {
             link: "https://cramix.vercel.app"
         },
         {
-            id: 4,
+            id: 5,
             title: "AI Persona & Chess Playground",
             category: "Interactive AI & Game Engine",
             technologies: "Google Gemini 2.5 Flash, React, Chess.js, WebAssembly",
@@ -153,7 +162,7 @@ export const config = {
         design: {
             title: "FULL-STACK & MOBILE",
             description: "Modern Scalable Web & Native Mobile Systems",
-            details: "Building responsive, component-driven web platforms and native mobile apps with React.js, Node.js, Express, MongoDB, and Flutter. Shipped production systems including AHabit on Google Play Store (1k+ downloads), CRAMIX live teaching platform (300+ users), and enterprise AI tools.",
+            details: "Building responsive, component-driven web platforms and native mobile apps with React.js, Next.js, Node.js, Express, MongoDB, and Flutter. Shipped production systems including RoleFit AI (live precision resume matching SaaS), AHabit on Google Play Store (1k+ downloads), and CRAMIX live teaching platform (300+ users).",
             tools: [
                 "React.js",
                 "Node.js",

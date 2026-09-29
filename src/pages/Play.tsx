@@ -56,6 +56,7 @@ Career Experience:
 - Independent Mobile Developer: Shipped AHabit to Google Play Store (1k+ downloads) with home screen widgets and offline-first Hive storage.
 
 Key Projects:
+- RoleFit AI: Launched production AI SaaS (https://saas-psi-flax.vercel.app/) that automates the resume tailoring and ATS matching pipeline. Features master PDF resume parsing, job link scraping (LinkedIn, Greenhouse, Ashby, Lever, Naukri), fit radar gap scoring, and 1-click tailored ATS resume generation.
 - Custom CSV & Excel MCP Server: High-performance Model Context Protocol (MCP) server engineered at TCS for enterprise automation. It allows AI agents to inspect, filter, query, transform, and analyze enterprise spreadsheets via standard MCP protocols. Note: As an enterprise internal tool built at TCS, its source code is proprietary and not hosted on a public GitHub repo.
 - CRAMIX: Full-stack live collaborative teaching platform serving 300+ college students. Features WebSocket real-time chatrooms, Zoom SDK live video sessions, JWT role-based access control, and responsive React.js UI deployed on Vercel.
 - AHabit: Cross-platform habit tracker on Google Play Store (1,000+ active downloads). Features Android home screen widgets, daily streak tracking, smart notifications, and sub-100ms sync.
@@ -237,6 +238,10 @@ const Play = () => {
   const getOnDevicePersonaResponse = (query: string): string => {
     const q = query.toLowerCase().trim();
 
+    if (q.includes("rolefit") || q.includes("resume") || q.includes("ats") || q.includes("saas") || q.includes("matching")) {
+      return "I recently launched RoleFit AI (https://saas-psi-flax.vercel.app/)! It's an intelligent AI SaaS that converts the 2-hour resume rewriting grind into an instant workflow. Candidates upload a master PDF resume and paste job posting URLs from LinkedIn, Greenhouse, Ashby, or Lever. Our backend scrapes the requirements, computes fit radar alignment scores, and exports 1-click ATS-tailored PDF resumes with zero fabricated claims!";
+    }
+
     if (q.includes("mcp") || q.includes("csv") || q.includes("excel")) {
       return "At TCS, I designed and implemented a custom Model Context Protocol (MCP) server for CSV and Excel files. As an enterprise internal tool built for TCS client workflows, it allows autonomous AI agents (using LangGraph, LangChain, and Cursor) to inspect schemas, execute parameterized queries, filter rows, and extract verified tabular insights without hallucinations. Because it was developed as an enterprise tool at TCS, its codebase is proprietary and not hosted on a public GitHub repo.";
     }
@@ -277,7 +282,7 @@ const Play = () => {
       return "Hey! I'm Abhinav Tomar 👋 AI Rapid Build Engineer at TCS specializing in AI Agentic systems, multi-step LLM pipelines, and full-stack development. Feel free to ask me anything about my work, projects, or background!";
     }
 
-    return "Thanks for asking! As an AI Rapid Build Engineer at TCS with 1+ year of experience, I focus on building production-ready AI Agentic workflows (LangGraph, Azure OpenAI, custom MCP servers) and full-stack applications like AHabit and CRAMIX. Feel free to ask about any specific project or my tech stack!";
+    return "Thanks for asking! As an AI Rapid Build Engineer at TCS with 1+ year of experience, I focus on building production-ready AI Agentic workflows (LangGraph, Azure OpenAI, custom MCP servers) and applications like RoleFit AI (launched AI SaaS), AHabit (1k+ downloads), and CRAMIX. Feel free to ask about any specific project or my tech stack!";
   };
 
   const sendMessage = async () => {
